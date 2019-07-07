@@ -13,9 +13,9 @@ module Players
           end
         end
       end
-      ['5','1','3','7','9','2','4','6','8'].each do |cell|
-        if board.cells[cell.to_i - 1] == " "
-          return cell
+      [5,1,3,7,9,2,4,6,8].each do |cell|
+        if board.cells[cell - 1] == " "
+          return cell.to_s
         end
       end
     end
