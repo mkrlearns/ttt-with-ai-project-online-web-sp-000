@@ -1,3 +1,64 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
+def start
+  puts "Would you like to play a game?"
+  puts "How many players? [0-2]"
+  input = gets
+  if input.strip.upcase == "WARGAMES"
+    game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"))
+    game.wargames
+  else
+    game_type(input.strip.to_i)
+  end
+  play_again
+end
+
+def game_type(input)
+  case input
+  when 0
+    game = Game.new(Players::Computer.new('X'), Players::Computer.new('O'))
+  when 1
+    game = one_player
+  when 2
+    game = Game.new(Players::Human.new('X'), Players::Human.new('O'))
+  else
+    puts "Invalid selection, try again."
+    start
+  end
+  game.play
+end
+
+def one_player
+  puts "Player X goes first."
+  puts "Would you like to be Player X? [y/n]:"
+  input = gets.strip.upcase
+  until input != "Y" || input != "N"
+    puts "Invalid selection"
+    one_player
+  end
+  if input == "Y"
+    Game.new(Players::Human.new('X'), Players::Computer.new('O'))
+  elsif input == "N"
+    Game.new(Players::Computer.new('X'), Players::Human.new('O'))
+  else
+    puts "Invalid selection, try again."
+    one_player
+  end
+end
+
+def play_again
+  puts "Play again? [y/n]:"
+  input = gets.strip.upcase
+  if input == "Y"
+    start
+  elsif input == "N"
+    exit
+  else
+    puts "Invalid selection, try again."
+    play_again
+  end
+end
+
+start
