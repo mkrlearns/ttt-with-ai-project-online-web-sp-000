@@ -90,6 +90,7 @@ class Game
       draws = draw? ? draws + 1 : draws
     end
     animation("GREETINGS PROFESSOR FALKEN.\n\nIN 100 MATCHES OF CPU VS CPU THERE WERE:\n#{wins} WINS AND #{draws} DRAWS.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.\n\n")
+    puts ""
   end
 
   def animation(string)
