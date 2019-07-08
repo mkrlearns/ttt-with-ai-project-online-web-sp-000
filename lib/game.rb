@@ -91,7 +91,7 @@ class Game
     while i > 0 do
       system "clear"
       print string[0...-i]+"\e"
-      i += i
+      i -= 1
       sleep(0.04)
     end
     puts ""
