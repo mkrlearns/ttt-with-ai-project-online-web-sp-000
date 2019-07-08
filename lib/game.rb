@@ -50,12 +50,6 @@ class Game
   end
 
   def turn
-    if board.turn_count == 0
-      board.display_key
-    else
-      board.display
-    end
-    puts "\nPlayer #{current_player.token}, choose 1-9:"
     input = current_player.move(board)
     if board.valid_move?(input)
       board.update(input, current_player)
