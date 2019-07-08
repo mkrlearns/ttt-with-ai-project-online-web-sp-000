@@ -5,7 +5,7 @@ module Players
       opponent = self.token == "X" ? "O" : "X"
       Game::WIN_COMBINATIONS.each do |combo|
         progress = [board.cells[combo[0]], board.cells[combo[1]], board.cells[combo[2]]]
-        if progress.count(opponent) == 2
+        if progress.count(opponent) == 2 || progress.count(self.token) == 2
           combo.each do |cell|
             if board.cells[cell] == " "
               return cell + 1
