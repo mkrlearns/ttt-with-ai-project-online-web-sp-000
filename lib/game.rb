@@ -80,8 +80,8 @@ class Game
     draws = 0
     100.times do
       turn until over?
-      wins = won? ? wins + 1 : wins
-      draws = draw? ? draws + 1 : draws
+      wins += 1 if won?
+      draws += 1 if draw?
     end
     animation("GREETINGS PROFESSOR FALKEN.\n\nIN 100 MATCHES OF CPU VS CPU THERE WERE:\n#{wins} WINS AND #{draws} DRAWS.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.\n\n")
   end
