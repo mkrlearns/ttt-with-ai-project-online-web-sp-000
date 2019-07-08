@@ -17,6 +17,7 @@ def start
   else
     puts "Invalid selection, try again.\n\n"
     start
+    return
   end
   play_again
 end
