@@ -89,7 +89,7 @@ class Game
       wins = won? ? wins + 1 : wins
       draws = draw? ? draws + 1 : draws
     end
-    animation("GREETINGS PROFESSOR FALKEN.\n\nIn 100 matches of CPU vs CPU there were:\n#{wins} wins and #{draws} draws.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.")
+    animation("GREETINGS PROFESSOR FALKEN.\n\nIn 100 matches of CPU vs CPU there were:\n#{wins} wins and #{draws} draws.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.\n\n")
     puts ""
   end
 
@@ -97,7 +97,7 @@ class Game
     i = string.length
     while i > 0 do
       system "clear"
-      puts string[0...-i]
+      print string[0...-i]+"\e"
       i = i -1
       sleep(0.05)
     end
