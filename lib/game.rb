@@ -59,7 +59,9 @@ class Game
     input = current_player.move(board)
     if board.valid_move?(input)
       board.update(input, current_player)
+      system "clear"
     else
+      system "clear"
       puts "Invalid selection, try again."
       turn
     end
@@ -68,8 +70,15 @@ class Game
   def play
     turn until over?
     board.display
-    puts "Congratulations #{winner}!" if won?
-    puts "Cat's Game!" if draw?
+    if won?
+      puts ""
+      puts "Congratulations #{winner}!"
+      puts ""
+    elsif draw?
+      puts ""
+      puts "Cat's Game!"
+      puts ""
+    end
   end
 
   def wargames
