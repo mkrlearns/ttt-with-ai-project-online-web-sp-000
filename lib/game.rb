@@ -34,7 +34,7 @@ class Game
   end
 
   def full?
-    board.cells.all? { |cell| cell == "X" || cell == "O" }
+    board.cells.count(" ") == 0
   end
   
   def draw?
@@ -46,7 +46,7 @@ class Game
   end
   
   def winner
-    won? ? board.cells[won?[0]] : nil
+    board.cells[won?[0]] if won?
   end
 
   def turn
@@ -65,13 +65,13 @@ class Game
     turn until over?
     board.display
     if won?
-      puts ""
+      puts
       puts "Congratulations #{winner}!"
-      puts ""
+      puts
     elsif draw?
-      puts ""
+      puts
       puts "Cat's Game!"
-      puts ""
+      puts
     end
   end
 
@@ -94,6 +94,6 @@ class Game
       i -= 1
       sleep(0.04)
     end
-    puts ""
+    puts
   end
 end

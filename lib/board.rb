@@ -10,7 +10,7 @@ class Board
   end
 
   def display
-    puts ""
+    puts
     puts " #{cells[0]} | #{cells[1]} | #{cells[2]} "
     puts "-----------"
     puts " #{cells[3]} | #{cells[4]} | #{cells[5]} "
@@ -19,7 +19,8 @@ class Board
   end
 
   def display_key
-    puts "\n 1 | 2 | 3 "
+    puts
+    puts " 1 | 2 | 3 "
     puts "-----------"
     puts " 4 | 5 | 6 "
     puts "-----------"
