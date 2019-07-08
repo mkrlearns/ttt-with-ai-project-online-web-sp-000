@@ -99,7 +99,7 @@ class Game
       system "clear"
       print string[0...-i]+"\e"
       i = i -1
-      sleep(0.05)
+      sleep(0.04)
     end
   end
 end
