@@ -19,8 +19,7 @@ class Board
   end
 
   def display_key
-    puts ""
-    puts " 1 | 2 | 3 "
+    puts "\n 1 | 2 | 3 "
     puts "-----------"
     puts " 4 | 5 | 6 "
     puts "-----------"

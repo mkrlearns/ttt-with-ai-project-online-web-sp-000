@@ -12,7 +12,7 @@ def start
   if input.strip.upcase == "WARGAMES"
     game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"))
     game.wargames
-  elsif is_number?(input)
+  elsif is_number?(input) && input.strip.to_i.between?(0,2)
     game_type(input.strip.to_i)
   else
     puts "Invalid selection, try again.\n\n"
@@ -25,17 +25,12 @@ def game_type(input)
   case input
   when 0
     game = Game.new(Players::Computer.new('X'), Players::Computer.new('O'))
-    game.play
   when 1
     game = one_player
-    game.play
   when 2
     game = Game.new(Players::Human.new('X'), Players::Human.new('O'))
-    game.play
-  else
-    puts "Invalid selection, try again.\n\n"
-    start
   end
+  game.play
 end
 
 def one_player
@@ -52,8 +47,7 @@ def one_player
   elsif input == "N"
     Game.new(Players::Computer.new('X'), Players::Human.new('O'))
   else
-    puts "Invalid selection, try again."
-    puts ""
+    puts "Invalid selection, try again.\n\n"
     one_player
   end
 end
@@ -68,8 +62,7 @@ def play_again
     exit
   else
     system "clear"
-    puts "Invalid selection, try again."
-    puts ""
+    puts "Invalid selection, try again.\n\n"
     play_again
   end
 end
