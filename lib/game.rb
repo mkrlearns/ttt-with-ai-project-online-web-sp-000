@@ -89,7 +89,7 @@ class Game
       wins = won? ? wins + 1 : wins
       draws = draw? ? draws + 1 : draws
     end
-    animation("GREETINGS PROFESSOR FALKEN.\n\nIn 100 matches of CPU vs CPU there were:\n#{wins} wins and #{draws} draws.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.\n\n")
+    animation("GREETINGS PROFESSOR FALKEN.\n\nIN 100 MATCHES OF CPU VS CPU THERE WERE:\n#{wins} WINS AND #{draws} DRAWS.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.\n\n")
     puts ""
   end
 
