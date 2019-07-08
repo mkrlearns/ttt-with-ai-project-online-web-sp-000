@@ -89,15 +89,17 @@ class Game
       wins = won? ? wins + 1 : wins
       draws = draw? ? draws + 1 : draws
     end
-    system "clear"
-    puts "Greetings Professor Falken."
+    animation("GREETINGS PROFESSOR FALKEN.\n\nIn 100 matches of CPU vs CPU there were:\n#{wins} wins and #{draws} draws.\n\nA STRANGE GAME.\nTHE ONLY WINNING MOVE\nIS NOT TO PLAY.")
     puts ""
-    puts "In 100 matches of CPU vs CPU there were:"
-    puts "#{wins} wins and #{draws} draws."
-    puts ""
-    puts "A Strange Game."
-    puts "The only winning move"
-    puts "is not to play."
-    puts ""
+  end
+
+  def animation(string)
+    i = string.length
+    while i > 0 do
+      system "clear"
+      puts string[0...-i]
+      i = i -1
+      sleep(0.05)
+    end
   end
 end
